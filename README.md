@@ -36,10 +36,16 @@ mod to 750
 Day 9
 Pipelines and Text Processing, and Filters Commands
 
-Filter logs using grep to select only the lines that contain a specific event (like call drops).
-Extract a required field (such as CELL ID) using awk, which picks specific columns from each log line.
-Clean or normalize the extracted data using sed by removing labels, symbols, or extra spaces.
-Sort and count occurrences using sort and uniq -c to find how many times each value appears.
-Optionally format results by adding a header or limiting the output using head.
-Identify the IMSIs (mobile subscribers) involved in call drops by filtering log lines and extracting IMSI fields.
-Perform advanced filtering by selecting only call drops where the signal strength (RSRP) is worse than –105 dBm.
+-->Filter logs using grep to select only the lines that contain a specific event (like call drops).
+
+-->Extract a required field (such as CELL ID) using awk, which picks specific columns from each log line.
+
+-->Clean or normalize the extracted data using sed by removing labels, symbols, or extra spaces.
+
+-->Sort and count occurrences using sort and uniq -c to find how many times each value appears.
+
+-->Optionally format results by adding a header or limiting the output using head.
+
+-->Identify the IMSIs (mobile subscribers) involved in call drops by filtering log lines and extracting IMSI fields.
+
+-->Perform advanced filtering by selecting only call drops where the signal strength (RSRP) is worse than –105 dBm.
