@@ -61,3 +61,19 @@ Permission Denied for  / :  The user forgets to use   when attempting to change 
 -->Identify the IMSIs (mobile subscribers) involved in call drops by filtering log lines and extracting IMSI fields.
 
 -->Perform advanced filtering by selecting only call drops where the signal strength (RSRP) is worse than –105 dBm.
+
+
+
+
+**Day 10**
+
+Not using double quotes (e.g., echo $name) when a variable contains spaces, leading the shell to split the variable content into multiple arguments, which breaks commands
+
+Forgetting the square brackets or leaving spaces inside them
+
+Misunderstanding that when a function is called, the script's positional arguments ($1, $2, etc.) are replaced by the function's arguments.
+
+
+
+
+
