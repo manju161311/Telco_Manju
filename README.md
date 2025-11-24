@@ -74,6 +74,108 @@ Forgetting the square brackets or leaving spaces inside them
 Misunderstanding that when a function is called, the script's positional arguments ($1, $2, etc.) are replaced by the function's arguments.
 
 
+**Day 11**
+**1) IP Reachability**
+import subprocess
+import os
+ip_list = [
+    "192.168.1.1",
+    "8.8.8.8",
+    "10.0.0.1",
+    "192.168.56.1"
+]
+for ip in ip_list:
+    print(f"Checking {ip} ...")
+    
+    # For Windows use: ping -n 1
+    command = ["ping", "-n", "1", ip]
+
+    result = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+    if result.returncode == 0:
+        print(f"IP address {ip} is reachable.\n")
+    else:
+        print(f"IP address {ip} is unreachable.\n")
+
+**2) Latency**
+# Step 1: Define Sample Data
+latency_values = [12, 15, 14, 20, 18, 10, 30, 25]
+
+# Step 2: Create calculate_average(data) Function
+def calculate_average(data):
+    if len(data) == 0:
+        return 0
+    return sum(data) / len(data)
+
+# Step 3 & 4: Create get_summary(data) Function
+def get_summary(data):
+    summary = {
+        "Min": min(data),
+        "Max": max(data),
+        "Average": calculate_average(data)
+    }
+    return summary
+
+# Step 5: Test Functions
+result = get_summary(latency_values)
+print("Network Latency Summary:")
+print(result)
+
+**3) Menu Driven CLI**
+import subprocess
+def check_ip_reachability():
+    ip_list = [
+        "192.168.1.1",
+        "8.8.8.8",
+        "10.0.0.1",
+        "192.168.56.1"
+    ]
+
+    for ip in ip_list:
+        print(f"\nChecking {ip} ...")
+        command = ["ping", "-n", "1", ip]   
+        result = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+        if result.returncode == 0:
+            print(f"IP address {ip} is reachable.")
+        else:
+            print(f"IP address {ip} is unreachable.")
+
+def calculate_average(data):
+    return sum(data) / len(data)
+
+def get_summary(data):
+    return {
+        "Min": min(data),
+        "Max": max(data),
+        "Average": calculate_average(data)
+    }
+
+while True:
+    print("\nNetwork Utility Menu ")
+    print("1. Test IP Reachability")
+    print("2. Latency Summary Calculator")
+    print("3. Exit")
+    
+    choice = input("Enter your choice (1/2/3): ")
+
+    if choice == "1":
+        check_ip_reachability()
+
+    elif choice == "2":
+        values = input("Enter comma-separated latency values: ")
+        values_list = [float(x.strip()) for x in values.split(",")]
+
+        summary = get_summary(values_list)
+        print("\nLatency Summary:")
+        print(summary)
+
+    elif choice == "3":
+        print("Exiting program...")
+        break
+    else:
+        print("Invalid choice! Please enter 1, 2, or 3.")
+
 
 
 
