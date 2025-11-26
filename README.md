@@ -178,4 +178,63 @@ while True:
 
 
 
+**Day 11**
+
+Task1
+Created the Python Virtual Environment in VS Code to Achieve the Clean, Isolated Development Environment
+**python -m venv my_python_env**
+
+
+Task2
+code:
+# a = 10
+# b = 25.5
+# c = (a+b)
+# d = 'Manju'
+# print (c)
+# print (d)
+
+# a=(int(input("Enter Num: ")))
+# b=(int(input("Enter Num: ")))
+# c = (a + b)
+# d = (a/b)
+# print(c)
+# print(d)
+
+**Task3**
+Calculator
+import logging
+logging.basicConfig(filename='log.txt',level=logging.WARNING)
+logging.debug("This is debug")
+logging.info("Program Started")
+logging.warning("Warning Information")
+logging.error("Error Info")
+logging.critical("critical info")
+num1 = float(input("Enter first number: "))
+op = input("Enter operator (+, -, *, /): ")
+num2 = float(input("Enter second number: "))
+
+if op == '+':
+    print("Result:", num1 + num2)
+elif op == '-':
+    print("Result:", num1 - num2)
+elif op == '*':
+    print("Result:", num1 * num2)
+elif op == '/':
+    if num2 == 0:
+        print("Error: Cannot divide by zero!")
+    else:
+        print("Result:", num1 / num2)
+else:
+    print("Invalid operator")
+
+**After This **
+Done some work on the basic pyton Functions and all
+Codes:
+from function import add
+result = add(5,10)
+print("Result: ",result)
+def add(a, b):
+    return a + b
+
 
